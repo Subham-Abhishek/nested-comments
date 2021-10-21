@@ -1,18 +1,25 @@
-import React from 'react'
-import data from '../data/comments'
+import React from "react";
 
-export const Comment = () => {
-    function check(data){
-        if(!data.replies) return;
-        else{
-            console.log(data.replies);
-            for(let reply of data.replies) check(reply);
-        }
-    }
-    check(data);
+export const Comment = ({ data }) => {
+    if (!data) return null;
+    else {
+      console.log(data);
     return (
-        <div>
-            
-        </div>
-    )
-}
+      <div>
+        {data.map((e) => {
+          return (
+            <>
+              <ul>
+                <li>
+                  <h4>{e.author}</h4>
+                  <p>{e.body}</p>
+                  <Comment data={e.replies} />
+                </li>
+              </ul>
+            </>
+          );
+        })}
+      </div>
+    );
+  }
+};

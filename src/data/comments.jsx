@@ -1,4 +1,4 @@
-const data = {
+const data = [{
     id: "001",
     author: "albert",
     body: "Whats the status?",
@@ -29,6 +29,6 @@ const data = {
         points: "2"
       }
     ]
-    };
+    }];
 
     export default data;
