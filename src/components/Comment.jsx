@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import { v4 as uid } from "uuid";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
@@ -23,6 +23,11 @@ export const Comment = ({ data }) => {
     data[0].replies = [...data[0].replies, payload];
     setReply("")
   };
+
+  const handleInput = useCallback((e) => {
+    // e.stopPropagation();
+    setReply(e.target.value);
+  },[])
 
   useEffect(() => {
       console.log("Effective");
@@ -52,10 +57,7 @@ export const Comment = ({ data }) => {
                         placeholder="Enter Your Reply ..."
                         value={reply}
                         onClick={(e) => e.stopPropagation()}
-                        onChange={(e) => {
-                          e.stopPropagation();
-                          setReply(e.target.value);
-                        }}
+                        onChange={(e) => handleInput(e)}
                       />
                       <span onClick={(e) => clickReply(e)} className="btn">
                         Reply
