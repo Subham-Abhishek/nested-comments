@@ -12,16 +12,6 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-li{
-  list-style: none;
-  border: 2px solid #ddd;
-  border-radius: 10px;
-  margin: 10px;
-  margin-right: 50px;
-}
-ul{
-  text-transform: capitalize;
-}
 .authorDetails div{
   display: grid;
 }
@@ -33,24 +23,37 @@ h1{
   text-decoration: underline;
 }
 .reply{
-  display: flex;
-  flex-direction: column;
+  display: flex !important;
+  align-items: center;
+  background-color: #ddd;
+  border-radius: 20px;
+  padding: 0 5px;
+  max-width: 400px;
 }
 .btn{
   display: inline;
   background-color: dodgerblue;
-  font-weight: 600;
+  font-size: 14px;
   color: white;
-  padding: 5px 15px;
+  padding: 2px 12px;
   width: fit-content;
   border-radius: 15px;
+  margin: 10px 0;
+}
+.reply > .btn{
+  margin: 0;
 }
 .replyIp{
-  display: inline;
-  max-width: 400px;
-  margin: 20px 0 5px 0;
-  background-color: #ddd;
+  background-color: transparent;
   border: none;
   padding: 7px 12px;
   border-radius: 20px;
+  width: 100%;
+}
+.accordion{
+  margin: 10px 40px;
+  border: 2px solid #efefef;
+  border-left: 2px solid #111;
+  border-radius: 10px;
+  text-transform: capitalize;
 }

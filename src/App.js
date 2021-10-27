@@ -6,7 +6,11 @@ function App() {
   return (
     <div>
       <h1>Nested Comments</h1>
-      <Comment data = {data}/>
+      {
+        data.map((e) => 
+          <Comment data = {e.replies} user = {e} key = {e.id} />
+        )
+      }
     </div>
   );
 }
