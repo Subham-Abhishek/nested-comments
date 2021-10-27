@@ -15,7 +15,7 @@ export const Comment = ({ data, user }) => {
     if (reply === "") return;
     const payload = {
       id: uid(),
-      author: "Subham",
+      author: "dev-saj",
       body: reply,
       replies: [],
     };
